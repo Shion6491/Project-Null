@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>NULL</title>
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: #000;
+    color: #e8e8e8;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  .view { display: none; padding: 0 6vw; }
+
+  /* 縦向き */
+  .portrait { display: block; }
+  .portrait .main {
+    margin: 0;
+    font-size: clamp(16px, 5vw, 26px);
+    line-height: 1.9;
+    letter-spacing: 0.12em;
+  }
+  .portrait .sub {
+    margin: 2.4em 0 0;
+    font-size: clamp(12px, 3.4vw, 16px);
+    letter-spacing: 0.3em;
+    color: #9a9a9a;
+  }
+
+  /* 横向き */
+  .landscape .main {
+    margin: 0;
+    font-size: clamp(18px, 5vh, 34px);
+    letter-spacing: 0.2em;
+    animation: rise 2.4s ease-out both;
+  }
+  @keyframes rise {
+    from { opacity: 0; filter: blur(6px); }
+    to   { opacity: 1; filter: blur(0); }
+  }
+
+  @media (orientation: landscape) {
+    .portrait { display: none; }
+    .landscape { display: block; }
+  }
+</style>
+</head>
+<body>
+  <main class="view portrait">
+    <p class="main">よくここまで辿り着いた。<br>だがこの先には何もない</p>
+    <p class="sub">-NULL</p>
+  </main>
+  <main class="view landscape">
+    <p class="main">画像のソースコードを見ろ</p>
+  </main>
+</body>
+</html>
